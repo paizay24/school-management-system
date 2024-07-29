@@ -11,7 +11,7 @@ class UpdateClassroomRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,10 @@ class UpdateClassroomRequest extends FormRequest
      */
     public function rules(): array
     {
+
+
         return [
-            //
+            'name' => 'required|min:5|unique:classrooms,name,'.$this->route('classroom')->id,
         ];
     }
 }

@@ -13,7 +13,8 @@ class ClassroomController extends Controller
      */
     public function index()
     {
-        //
+        $classRooms = Classroom::all();
+        return view('classroom.index',compact('classRooms'));
     }
 
     /**
@@ -21,7 +22,7 @@ class ClassroomController extends Controller
      */
     public function create()
     {
-        //
+        return view('classroom.create');
     }
 
     /**
@@ -29,7 +30,11 @@ class ClassroomController extends Controller
      */
     public function store(StoreClassroomRequest $request)
     {
-        //
+        $classRoom = new Classroom();
+        $classRoom->name = $request->name;
+        $classRoom->save();
+        $classRoomName = $classRoom->name;
+        return redirect()->route('classroom.index')->with(['status' =>  $classRoomName . ' created successfully']);
     }
 
     /**
@@ -37,7 +42,7 @@ class ClassroomController extends Controller
      */
     public function show(Classroom $classroom)
     {
-        //
+
     }
 
     /**
@@ -45,7 +50,7 @@ class ClassroomController extends Controller
      */
     public function edit(Classroom $classroom)
     {
-        //
+        return view('classroom.edit',compact('classroom'));
     }
 
     /**
@@ -53,7 +58,12 @@ class ClassroomController extends Controller
      */
     public function update(UpdateClassroomRequest $request, Classroom $classroom)
     {
-        //
+
+        $classroom->name = $request->name;
+        $classroom->update();
+        $classRoomName = $classroom->name;
+        return redirect()->route('classroom.index')->with(['status' =>  $classRoomName . ' updated successfully']);
+
     }
 
     /**
@@ -61,6 +71,8 @@ class ClassroomController extends Controller
      */
     public function destroy(Classroom $classroom)
     {
-        //
+        $classroom->delete();
+        $classRoomName = $classroom->name;
+        return redirect()->route('classroom.index')->with(['status' =>  $classRoomName . ' deleted successfully']);
     }
 }

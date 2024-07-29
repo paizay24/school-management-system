@@ -17,8 +17,7 @@ class ClassroomSeeder extends Seeder
         $classrooms = ['1BE','2BE','3BE','4BE','5BE','6BE'];
         foreach($classrooms as $classroom){
             Classroom::factory()->create([
-                'name' => $classroom,
-                'teacher_id' => Teacher::inRandomOrder()->first()->id
+                'name' => $classroom
             ]);
         }
     }

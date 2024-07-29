@@ -8,7 +8,7 @@
     </div>
 
 
-    <p class="small text-black-50 mb-1">Manage Teacher</p>
+    <p class="small text-black-50 mb-1">Manage Teachers</p>
     <div class="list-group mb-3">
         <a class="list-group-item list-group-item-action cursor-pointer" href="{{ route('teacher.index') }}">
             <i class="bi bi-people"></i>
@@ -24,14 +24,16 @@
 
     </div>
 
-    <p class="small text-black-50 mb-1">Manage Category</p>
+    <p class="small text-black-50 mb-1">Manage Classrooms</p>
     <div class="list-group mb-3">
-        <a class="list-group-item list-group-item-action">
-            Category List
+        <a class="list-group-item list-group-item-action cursor-pointer" href="{{ route('classroom.index') }}">
+            <i class="bi bi-hospital"></i>
+            Classroom Lists
         </a>
 
-        <a class="list-group-item list-group-item-action">
-            Create Category
+        <a class="list-group-item list-group-item-action cursor-pointer" href="{{ route('classroom.create') }}">
+            <i class="bi bi-plus-lg"></i>
+            Create New Classroom
         </a>
     </div>
 </div>
