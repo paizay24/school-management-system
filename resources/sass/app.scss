@@ -4,5 +4,17 @@
 // Variables
 @import 'variables';
 
+
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
+.position-sticky {
+    top: 10px; /* Adjust based on your header height */
+}
+.teacher-img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 10px;
+}

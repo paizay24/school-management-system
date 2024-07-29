@@ -11,7 +11,7 @@ class StoreTeacherRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreTeacherRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|min:5',
+            'email' => 'required',
+            'phone' => 'required|min:6',
+            'address' => 'required|min:5',
+            'teacher_img' => 'required|mimes:png,jpg,jpeg|file|max:2048'
         ];
     }
 }
