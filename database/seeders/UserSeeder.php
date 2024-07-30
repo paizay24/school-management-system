@@ -25,14 +25,14 @@ class UserSeeder extends Seeder
         'password' => Hash::make('pzo123123'),
         'remember_token' => Str::random(10),
     ]);
-    // User::factory()->create([
-    //     'name' => 'teacher',
-    //     'email' => 'teacher@gmail.com',
-    //     'role' => 'teacher',
-    //     'email_verified_at' => now(),
-    //     'password' => Hash::make('pzo123123'),
-    //     'remember_token' => Str::random(10),
-    // ]);
+    User::factory()->create([
+        'name' => 'teacher',
+        'email' => 'teacher@gmail.com',
+        'role' => 'teacher',
+        'email_verified_at' => now(),
+        'password' => Hash::make('pzo123123'),
+        'remember_token' => Str::random(10),
+    ]);
     User::factory()->create([
         'name' => 'student',
         'email' => 'student@gmail.com',

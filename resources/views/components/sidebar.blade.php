@@ -63,12 +63,12 @@
             <i class="bi bi-megaphone"></i>
           Announcements Lists
         </a>
-        @admin
+
         <a class="list-group-item list-group-item-action cursor-pointer" href="{{ route('post.create') }}">
             <i class="bi bi-send-plus"></i>
             Create New Announcement
         </a>
-        @endadmin
+        
     </div>
 </div>
 
