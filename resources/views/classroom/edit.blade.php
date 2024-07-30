@@ -1,5 +1,13 @@
 @extends('layouts.app')
 @section('content')
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+      <li class="breadcrumb-item active" aria-current="page" ><a href="{{ route('classroom.index') }}">Class Room Lists</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Update Classroom</li>
+
+    </ol>
+  </nav>
     <h5 class=" text-center fw-bold">Update Classroom</h5>
     <form action="{{ route('classroom.update',$classroom->id) }}" method="POST" class=" form-control">
         @csrf

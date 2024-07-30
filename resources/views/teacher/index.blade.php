@@ -1,6 +1,12 @@
 @extends('layouts.app')
 @section('content')
     <section>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Teacher Lists</li>
+            </ol>
+          </nav>
         <h3 class=" text-center fw-bold">Teacher Lists</h3>
         <div class="d-flex justify-content-between mb-3">
             <div class="">
