@@ -14,10 +14,15 @@
             <i class="bi bi-people"></i>
             Teacher Lists
         </a>
-        <a class="list-group-item list-group-item-action cursor-pointer" href="{{ route('teacher.create') }}">
-            <i class="bi bi-person-plus"></i>
-            Add Teacher
-        </a>
+       @admin
+       <a class="list-group-item list-group-item-action cursor-pointer" href="{{ route('teacher.create') }}">
+        <div class=" d-flex">
+         <div class=" d-inline-block"><i class="bi bi-person-plus"></i>
+             Add Teacher</div>
+
+        </div>
+     </a>
+       @endadmin
 
 
 
@@ -30,11 +35,13 @@
             <i class="bi bi-hospital"></i>
             Classroom Lists
         </a>
-
+        @admin
         <a class="list-group-item list-group-item-action cursor-pointer" href="{{ route('classroom.create') }}">
             <i class="bi bi-plus-lg"></i>
             Create New Classroom
         </a>
+        @endadmin
+
     </div>
 
     <p class="small text-black-50 mb-1">Manage Students</p>
@@ -43,11 +50,12 @@
             <i class="bi bi-people"></i>
           Student Lists
         </a>
-
+        @admin
         <a class="list-group-item list-group-item-action cursor-pointer" href="{{ route('student.create') }}">
             <i class="bi bi-person-plus"></i>
             Create New Student
         </a>
+        @endadmin
     </div>
 </div>
 

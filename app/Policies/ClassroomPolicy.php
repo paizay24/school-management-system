@@ -8,6 +8,11 @@ use Illuminate\Auth\Access\Response;
 
 class ClassroomPolicy
 {
+    public function before(User $user){
+        if($user->role === 'admin'){
+            return true;
+        }
+    }
     /**
      * Determine whether the user can view any models.
      */

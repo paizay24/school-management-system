@@ -15,17 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'pai zay',
-            'email' => 'pzo@gmail.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('pzo123123'),
-            'remember_token' => Str::random(10),
-        ]);
 
         $this->call([
+            UserSeeder::class,
             TeacherSeeder::class,
             ClassroomSeeder::class,
             StudentSeeder::class

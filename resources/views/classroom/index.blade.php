@@ -15,7 +15,9 @@
                     <th scope="col">Class Name</th>
                     <th scope="col">Total Students</th>
                     <th scope="col">Created_at</th>
+                    @admin
                     <th scope="col">Control</th>
+                    @endadmin
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +37,7 @@
                             {{ $classRoom->created_at->format('h : m A') }}
                         </p>
                         </td>
+                        @admin
                         <td>
                             <div class=" d-flex align-items-center m-2 gap-1">
                                 <form action="{{ route('classroom.destroy', $classRoom->id) }}" method="POST">
@@ -52,6 +55,7 @@
                                 </form>
                             </div>
                         </td>
+                        @endadmin
 
 
                     </tr>

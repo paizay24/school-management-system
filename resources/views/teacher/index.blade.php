@@ -38,7 +38,10 @@
                         <th scope="col">Phone</th>
                         <th scope="col" w-25>Address</th>
                         <th scope="col">Created_at</th>
+                        @admin
                         <th scope="col">Control</th>
+                        @endadmin
+
                     </tr>
                 </thead>
                 <tbody>
@@ -65,23 +68,25 @@
                                     {{ $teacher->created_at->format('h : m A') }}
                                 </p>
                             </td>
-                            <td>
-                                <div class=" d-flex align-items-center m-2 gap-1">
-                                    <form action="{{ route('teacher.destroy',$teacher->id) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                        <button class=" btn btn-danger btn-sm ">
-                                            <i class="bi bi-trash"></i>
-                                        </button>
-                                    </form>
-                                    <form action="{{ route('teacher.edit',$teacher->id) }}" method="get">
-                                        @csrf
-                                        <button class=" btn btn-primary btn-sm">
-                                            <i class="bi bi-pencil"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
+                          @admin
+                          <td>
+                            <div class=" d-flex align-items-center m-2 gap-1">
+                                <form action="{{ route('teacher.destroy',$teacher->id) }}" method="POST">
+                                    @csrf
+                                    @method('delete')
+                                    <button class=" btn btn-danger btn-sm ">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                                <form action="{{ route('teacher.edit',$teacher->id) }}" method="get">
+                                    @csrf
+                                    <button class=" btn btn-primary btn-sm">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                        @endadmin
 
 
                         </tr>
