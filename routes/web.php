@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,6 +23,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('/teacher', TeacherController::class);
     Route::resource('/classroom', ClassroomController::class);
     Route::resource('/student', StudentController::class);
+    Route::resource('/post',PostController::class);
 });
 
 // // Teacher routes with only index access
