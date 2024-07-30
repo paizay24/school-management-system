@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Photo;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StorePhotoRequest;
 use App\Http\Requests\UpdatePhotoRequest;
 
@@ -61,6 +62,11 @@ class PhotoController extends Controller
      */
     public function destroy(Photo $photo)
     {
-        //
+        //delete in storage
+        Storage::delete('public/' . $photo->name);
+        //delete in db
+        $photo->delete();
+
+        return redirect()->back()->with("status", 'Photo delete Successfully');
     }
 }
