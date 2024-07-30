@@ -36,6 +36,19 @@
             Create New Classroom
         </a>
     </div>
+
+    <p class="small text-black-50 mb-1">Manage Students</p>
+    <div class="list-group mb-3">
+        <a class="list-group-item list-group-item-action cursor-pointer" href="{{ route('student.index') }}">
+            <i class="bi bi-people"></i>
+          Student Lists
+        </a>
+
+        <a class="list-group-item list-group-item-action cursor-pointer" href="{{ route('student.create') }}">
+            <i class="bi bi-person-plus"></i>
+            Create New Student
+        </a>
+    </div>
 </div>
 
 {{-- @admin

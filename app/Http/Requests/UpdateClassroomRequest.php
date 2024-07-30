@@ -24,7 +24,7 @@ class UpdateClassroomRequest extends FormRequest
 
 
         return [
-            'name' => 'required|min:5|unique:classrooms,name,'.$this->route('classroom')->id,
+            'name' => 'required|min:3|unique:classrooms,name,' .$this->route('classroom')->id,
         ];
     }
 }
